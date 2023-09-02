@@ -7,7 +7,7 @@ function telephoneCheck(str) {
   
     var result=false;
   
-    if(patt.test(str)||patt2.test(str)){
+    if(patt.test(str) || patt2.test(str)){
          var temp=str.match(/\d/g);
         console.log(temp.length);
         console.log(str);
@@ -16,13 +16,13 @@ function telephoneCheck(str) {
          if(temp.length===11&&temp[0]!=="1")
            {
              result=false;
-             console.log("11 digit and first one is 1");
+             console.log("11 digit and first one is any number");
   
            }else if(temp.length==10&&str.match(/[(]|[)]/g)===null){
-              console.log("() ");
+              console.log("(Your number is corect) ");
   
               result=true;
-            }else if(temp.length==10&&str.match(/[(]|[)]/g).length<2&&str.match(/[(]|[)]/).length>0){
+            }else if(temp.length==10 && str.match(/[(]|[)]/g).length<2 && str.match(/[(]|[)]/).length>0){
               console.log("10 digit ");
   
               result=false;
@@ -44,4 +44,4 @@ function telephoneCheck(str) {
     return result;
   }
   
-  telephoneCheck("1 555)555-5555");
+  telephoneCheck("5555555555");
